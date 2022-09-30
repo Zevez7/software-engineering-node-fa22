@@ -1,6 +1,8 @@
 /**
  * @file Implements an Express Node HTTP server.
  */
+
+// "npm run dev" to start server
 import express, {Request, Response} from 'express';
 import * as mongoose from "mongoose";
 import * as moviesDao from "./movies/movies-dao";
