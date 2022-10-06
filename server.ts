@@ -1,8 +1,14 @@
 /**
  * @file Implements an Express Node HTTP server.
  */
+<<<<<<< HEAD
 
 // "npm run dev" to start server
+=======
+import ActorController from "./actors/actors-controller";
+import ActorsService from "./actors/actors-service";
+import ActorsDao from "./actors/actors-dao";
+>>>>>>> 2d57e4e6b1a91ab334e57d0b161c8fd31d408d37
 import express, {Request, Response} from 'express';
 import * as mongoose from "mongoose";
 import * as moviesDao from "./movies/movies-dao";
@@ -30,6 +36,13 @@ const sayHello2 = (req: Request, res: Response) =>
     res.send('Hi from FSD 2!!!');
 
 const movieController = new MoviesController(app);
+
+
+const actorDao = new ActorsDao();
+const actorService = new ActorsService(actorDao);
+const actorController = new ActorController(app, actorService);
+
+require('./castings/castings-controller')(app);
 
 app.get('/', sayHello);
 
