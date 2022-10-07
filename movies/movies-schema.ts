@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
 
-const moviesSchema = new mongoose.Schema({
+const moviesSchema = new mongoose.Schema(
+  {
     title: String,
     released: Date,
     rating: String,
     year: Number,
     director: String,
-    cast: [String]
-}, {collection: 'movies'});
+    cast: [String],
+  },
+  { collection: "movies" }
+);
 
 export default moviesSchema;
